@@ -20,6 +20,7 @@ app_id = os.getenv('APP_ID')
 app_secret = os.getenv('APP_SECRET')
 
 user_ids = os.getenv('USER_ID', '').split("\n")
+url="https://lab.magiconch.com/sakana/?v=takina"
 template_id = os.getenv('TEMPLATE_ID')
 
 if app_id is None or app_secret is None:
@@ -109,7 +110,7 @@ data = {
     "value":"",
   },
   "2":{
-    "value":"",
+    "value":"📅",
   },
   "3": {
     "value":today.strftime('%Y年%m月%d日')+week,
@@ -120,84 +121,84 @@ data = {
     "color": get_random_color()
   },
   "5":{
-    "value":"",
+    "value":"🌥",
   },
   "6": {
     "value": weather,
     "color": get_random_color()
   },
   "7":{
-    "value":"",
+    "value":"🌎",
   },
   "8": {
     "value": city,
     "color": get_random_color()
   },
   "9":{
-    "value":"",
+    "value":"🌡",
   },
   "a": {
     "value": tem,
     "color": get_random_color()
   },
   "b":{
-    "value":"",
+    "value":"☀",
   },
    "c": {
     "value": tem1+"~"+tem2,
     "color": get_random_color()
   },
   "d":{
-    "value":"",
+    "value":"🌤",
   },
   "e": {
     "value": sunrise,
     "color": get_random_color()
   },
   "f":{
-    "value":"",
+    "value":"🌥",
   },
   "g": {
     "value": sunset,
     "color": get_random_color()
   },
   "h":{
-    "value":"",
+    "value":"💨",
   },
   "i":{
     "value": win+win_speed,
     "color": get_random_color()
   },
   "j":{
-    "value":"",
+    "value":"💧",
   },
   "k":{
     "value": pop+"%",
     "color": get_random_color()
   },
   "l":{
-    "value":"",
+    "value":"🌬",
   },
   "m":{
     "value": aqi['air_level'],
     "color": get_random_color()
   },
   "n":{
-    "value":"",
+    "value":"💞",
   },
   "o": {
     "value": get_memorial_days_count(),
     "color": get_random_color()
   },
   "p":{
-    "value":"",
+    "value":"🎂",
   },
   "q": {
     "value": get_birthday_left(),
     "color": get_random_color()
   },
   "r":{
-    "value":"",
+    "value":"🔔",
   },
   "s": {
     "value": air_tips,
@@ -215,7 +216,7 @@ data = {
     "color": get_random_color()
   },
   "w":{
-    "value":"",
+    "value":"❤",
   },
   "x":{
     "value":"",
@@ -230,7 +231,7 @@ if __name__ == '__main__':
   count = 0
   try:
     for user_id in user_ids:
-      res = wm.send_template(user_id, template_id, data)
+      res = wm.send_template(user_id, template_id, data,url)
       count+=1
   except WeChatClientException as e:
     print('微信端返回错误：%s。错误代码：%d' % (e.errmsg, e.errcode))
