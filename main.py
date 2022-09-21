@@ -39,13 +39,13 @@ def get_weather():
   if city is None:
     print('请设置城市')
     return None
-  url = "" + city
+  url = "https://v0.yiketianqi.com/api?unescape=1&version=v61&appid=78158848&appsecret=650ylFRx&city=" + city
   res1 = requests.get(url,verify=False).json()
   return res1['week'],res1['alarm'],res1['aqi'], res1['win'],res1['win_speed'],res1['tem'], res1['tem2'], res1['tem1'],res1['air_tips']
 
 #天行数据接口
 def get_weather_wea():
-  url = "" + city
+  url = "http://api.tianapi.com/tianqi/index?key=d5edced4967c76fd11899dbe1b753d91&city=" + city
   res2 = requests.get(url,verify=False).json()
   res21 = res2['newslist'][0]
   return res21['sunrise'],res21['sunset'],res21['tips'],res21['weather'],res21['pop']
