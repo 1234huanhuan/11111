@@ -2,10 +2,14 @@ from datetime import date, datetime, timedelta
 from collections import defaultdict
 from wechatpy import WeChatClient, WeChatClientException
 from wechatpy.client.api import WeChatMessage
+from borax.calendars.lunardate import LunarDate
+from random import randint
 import math
 import requests
 import os
+import re
 import random
+import xmltodict
 
 today = datetime.now() + timedelta(hours=8)
 start_date = os.getenv('START_DATE')
