@@ -1,3 +1,12 @@
+rom datetime import date, datetime, timedelta
+from collections import defaultdict
+from wechatpy import WeChatClient, WeChatClientException
+from wechatpy.client.api import WeChatMessage
+import math
+import requests
+import os
+import random
+
 today = datetime.now() + timedelta(hours=8)
 start_date = os.getenv('START_DATE')
 city = os.getenv('CITY')
