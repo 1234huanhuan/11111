@@ -1,4 +1,4 @@
-﻿certifi==2022.6.15
+certifi==2022.6.15
 cffi==1.15.1
 charset-normalizer==2.1.0
 cryptography==37.0.4
@@ -14,4 +14,3 @@ xmltodict==0.13.0
 emoji==2.0.0
 borax==3.5.6
 zhdate==0.1
-lxml==4.9.1
